@@ -1,7 +1,61 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() => runApp(MyAppCounter());
+
+class MyAppCounter extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.blue,
+        appBar: AppBar(
+          title: Text('App Counter'),
+          centerTitle: true,
+          backgroundColor: Colors.indigo,
+        ),
+        body: Center(
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                Text(
+                  'Tap "-" to decrement',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                      icon: Icon(Icons.remove),
+                      onPressed: null,
+                      color: Colors.black,
+                    ),
+                    Text(
+                      '50',
+                      style: TextStyle(color: Colors.black, fontSize: 20),
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.add),
+                      onPressed: null,
+                      color: Colors.black,
+                    ),
+                  ],
+                  mainAxisAlignment: MainAxisAlignment.center,
+                ),
+                Text(
+                  'Tap "+" to increment',
+                  style: TextStyle(color: Colors.white, fontSize: 12),
+                  //  textAlign: TextAlign.center,
+                ),
+              ],
+              mainAxisAlignment: MainAxisAlignment.center,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
